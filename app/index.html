@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="ExperimentController as experiment">
+<div id="datasetSelector">
+    <label><input type="radio" name="dataset" ng-model="currentIndex" value="0" ng-checked="true">Dataset 1</label><br>
+    <label><input type="radio" name="dataset" ng-model="currentIndex" value="1">Dataset 2</label><br>
+    <label><input type="radio" name="dataset" ng-model="currentIndex" value="2">Dataset 3</label><br>
+    <label><input type="radio" name="dataset" ng-model="currentIndex" value="3">Dataset 4</label><br>
+    <label><input type="radio" name="dataset" ng-model="currentIndex" value="4">Dataset 5</label><br>
+    <label><input type="radio" name="dataset" ng-model="currentIndex" value="5">Dataset 6</label><br>
+</div>
+
+<plot-corral id="plot1"></plot-corral>
+<plot-corral id="plot2"></plot-corral>
+<plot-corral id="plot3"></plot-corral>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery/jquery-2.1.1.min.js"></script>
+<script src="bower_components/d3/d3.js"></script>
+<script src="components/view/histogramPlot.js"></script>
+<script src="components/view/dotPlot.js"></script>
+<script src="components/d3Helpers/d3Helper.js"></script>
+<script src="components/d3Helpers/dotPlotHelper.js"></script>
+<script src="components/d3Helpers/histogramHelper.js"></script>
+<script src="components/model/range.js"></script>
+<script src="experiment/experiment.js"></script>
+<!--<script src="bower_components/angular-route/angular-route.js"></script>-->
+<script src="app.js"></script>
+<script src="histogram/histogram.js"></script>
+<script src="dot_plot/dotPlot.js"></script>
+<script src="plot_corral/plotCorral.js"></script>
+</body>
+</html>

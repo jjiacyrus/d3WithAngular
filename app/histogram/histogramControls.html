@@ -1,0 +1,28 @@
+<button class='editSpecification' ng-hide="histogramControls.showControls" ng-click="histogramControls.setShowControls(true)">Change Specification</button>
+<button class='hideControls' ng-show="histogramControls.showControls" ng-click="histogramControls.setShowControls(false)">Hide Controls</button>
+
+<div class='controls' ng-show="histogramControls.showControls">
+    <div class='xLabel'>X Parameter</div>
+    <select class='xParameter' ng-model="histogramSpec.xParameter">
+        <option value="CH1">CH1</option>
+        <option value="CH2">CH2</option>
+        <option value="CH3">CH3</option>
+        <option value="CH4">CH4</option>
+    </select>
+
+    <!--<select class='xScale' ng-model="histogramSpec.xScale">-->
+        <!--<option value="LIN">Linear</option>-->
+        <!--<option value="LOG">Log</option>-->
+    <!--</select>-->
+
+    <div class='xRangeSelector'>
+        <div class='xRangeLabel'>X Range</div>
+        <input class='xRangeMin' type='text' ng-model="histogramSpec.xRange.min">
+        <input class='xRangeMax' type='text' ng-model="histogramSpec.xRange.max">
+    </div>
+    <div>
+        <div class='numberOfBinsLabel'>Number of Bins</div>
+        <input class='numberOfBins' type='text' ng-model="histogramSpec.numberOfBins">
+    </div>
+
+</div>

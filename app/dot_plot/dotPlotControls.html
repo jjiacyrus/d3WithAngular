@@ -1,0 +1,43 @@
+<button class='editSpecification' ng-hide="dotPlotControls.showControls" ng-click="dotPlotControls.setShowControls(true)">Change Specification</button>
+<button class='hideControls' ng-show="dotPlotControls.showControls" ng-click="dotPlotControls.setShowControls(false)">Hide Controls</button>
+
+<div class='controls' ng-show="dotPlotControls.showControls">
+    <div class='xLabel'>X Parameter</div>
+    <select class='xParameter' ng-model="plotSpec.xParameter">
+        <option value="CH1">CH1</option>
+        <option value="CH2">CH2</option>
+        <option value="CH3">CH3</option>
+        <option value="CH4">CH4</option>
+    </select>
+
+    <select class='xScale' ng-model="plotSpec.xScale">
+        <option value="LIN">Linear</option>
+        <option value="LOG">Log</option>
+    </select>
+
+    <div class='yLabel'>Y Parameter</div>
+    <select class='yParameter' ng-model="plotSpec.yParameter">
+        <option value="CH1">CH1</option>
+        <option value="CH2">CH2</option>
+        <option value="CH3">CH3</option>
+        <option value="CH4">CH4</option>
+    </select>
+    <select class='yScale' ng-model="plotSpec.yScale">
+        <option value="LIN">Linear</option>
+        <option value="LOG">Log</option>
+    </select>
+
+    <div class='xRangeSelector'>
+        <div class='xRangeLabel'>X Range</div>
+        <input class='xRangeMin' type='text' ng-model="plotSpec.xRange.min">
+        <input class='xRangeMax' type='text' ng-model="plotSpec.xRange.max">
+    </div>
+
+    <div class='yRangeSelector'>
+        <div class='yRangeLabel'>Y Range</div>
+        <input class='yRangeMin' type='text' ng-model="plotSpec.yRange.min">
+        <input class='yRangeMax' type='text' ng-model="plotSpec.yRange.max">
+    </div>
+
+
+</div>

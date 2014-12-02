@@ -1,0 +1,50 @@
+plot-corral {
+  float: left;
+  width: 350px;
+  min-height: 350px;
+  background: #F1F1F1;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+button {
+  border: none;
+}
+
+histogram-controls,dot-plot-controls {
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 25px;
+}
+
+histogram-controls button.editSpecification, dot-plot-controls button.editSpecification {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+histogram-controls button.hideControls, dot-plot-controls button.hideControls {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+plot-corral button.destroy {
+  float: right;
+}
+
+plot-corral div.createButtons {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(0, -50%)
+}
+
+
+/*.tick text {*/
+  /*font-size: 10pt;*/
+/*}*/
