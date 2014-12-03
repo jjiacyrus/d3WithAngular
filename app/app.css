@@ -12,7 +12,7 @@ button {
   border: none;
 }
 
-histogram-controls,dot-plot-controls {
+histogram-controls,dot-plot-controls, line-controls {
 
   margin-left: auto;
   margin-right: auto;
@@ -20,13 +20,13 @@ histogram-controls,dot-plot-controls {
   padding: 25px;
 }
 
-histogram-controls button.editSpecification, dot-plot-controls button.editSpecification {
+histogram-controls button.editSpecification, dot-plot-controls button.editSpecification, line-controls button.editSpecification {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-histogram-controls button.hideControls, dot-plot-controls button.hideControls {
+histogram-controls button.hideControls, dot-plot-controls button.hideControls, line-controls button.hideControls {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -44,7 +44,3 @@ plot-corral div.createButtons {
   transform: translate(0, -50%)
 }
 
-
-/*.tick text {*/
-  /*font-size: 10pt;*/
-/*}*/

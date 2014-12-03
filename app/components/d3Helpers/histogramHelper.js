@@ -34,7 +34,7 @@ HistogramHelper.renderHistogramData = function (canvas, data, xAxisOffset, yAxis
     bar.append("rect")
         .attr("x", 1)
         .attr("width", function (d) {
-            return d.width - 1;
+            return 1;
         })
         .attr("height", function (d) {
             return  graphingAreaHeight - d.y;

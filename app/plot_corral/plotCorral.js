@@ -13,25 +13,29 @@
             link: function (scope, element, attrs) {
                 scope.id = attrs.id;
 
-                scope.destroy= function(){
+                scope.destroy = function () {
                     scope.plotShowing = false;
-                    $('plot-corral#'+scope.id +' histogram-plot').remove();
-                    $('plot-corral#'+scope.id +' dot-plot').remove();
+                    $('plot-corral#' + scope.id + ' histogram-plot').remove();
+                    $('plot-corral#' + scope.id + ' dot-plot').remove();
+                    $('plot-corral#' + scope.id + ' line-plot').remove();
                 }
 
-                scope.renderHistogram = function(){
+                scope.renderHistogram = function () {
                     scope.plotShowing = true;
-                    element.append($compile("<histogram-plot plot='"+ scope.id +"'></histogram-plot>")(scope));
+                    element.append($compile("<histogram-plot plot='" + scope.id + "'></histogram-plot>")(scope));
 
                 }
-                scope.renderDotPlot = function(){
+                scope.renderDotPlot = function () {
                     scope.plotShowing = true;
-                    element.append($compile("<dot-plot plot='"+ scope.id +"'></dot-plot>")(scope));
+                    element.append($compile("<dot-plot plot='" + scope.id + "'></dot-plot>")(scope));
+
+                }
+                scope.renderLinePlot = function () {
+                    scope.plotShowing = true;
+                    element.append($compile("<line-plot plot='" + scope.id + "'></line-plot>")(scope));
 
                 }
             }
-
-
         }
     })
 })();

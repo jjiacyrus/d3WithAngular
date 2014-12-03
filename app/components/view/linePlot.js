@@ -1,4 +1,4 @@
-function HistogramPlot(plotModel, histogramSpec, experiment) {
+function LinePlot(plotModel, lineSpec, experiment) {
 
     this.renderPlot = function () {
         var height = plotModel.height;
@@ -9,31 +9,34 @@ function HistogramPlot(plotModel, histogramSpec, experiment) {
         var yHeight = height - yTopPadding;
 
 
-        var xScale = D3Helper.buildLinearXScale(new Range(0, width - xRightPadding), histogramSpec.xRange);
-        if(histogramSpec.xScale == 'LOG'){
-            xScale= D3Helper.buildLogXScale(new Range(0, width-xRightPadding), histogramSpec.xRange);
-        }
+        var xScale = D3Helper.buildLinearXScale(new Range(0, width - xRightPadding), lineSpec.xRange);
 
-        var channelData = getChannelData(experiment.current, histogramSpec.xParameter);
+        var channelData = getChannelData(experiment.current, lineSpec.xParameter);
 
-        var dataInDomain = HistogramHelper.getDataInDomain(channelData, histogramSpec.xRange);
-        var binnedData = HistogramHelper.binData(dataInDomain, xScale, histogramSpec.numberOfBins);
+        var dataInDomain = LinePlotHelper.getDataInDomain(channelData, lineSpec.xRange);
 
-        var yScale = D3Helper.buildLinearYScale(new Range(yBottomPadding, yHeight), new Range(0, Math.floor(d3.max(binnedData, function (d) {
+        var max = Math.floor(d3.max(dataInDomain, function (d) {
             return d.y;
-        }) * 1.1)));
+        }) * 1.1);
+
+        var min = Math.floor(d3.min(dataInDomain, function (d) {
+            return d.y;
+        }) * 0.9);
+        var yScale = D3Helper.buildLinearYScale(new Range(yBottomPadding, yHeight), new Range(min, max));
+
+        var scaledDAta = LinePlotHelper.scaleData(dataInDomain, xScale, yScale);
+
 
         var xAxisOffset = 50;
 
         var canvas = D3Helper.renderCanvas(plotModel.parentNode, plotModel.plotId, width, height);
         renderAxes(canvas, xScale, xAxisOffset, yHeight, yScale);
 
-        var scaledBinnedData = HistogramHelper.scaleBinnedData(binnedData, xScale, yScale);
-        HistogramHelper.renderHistogramData(canvas, scaledBinnedData, xAxisOffset, 0, yHeight);
+        LinePlotHelper.renderLine(canvas, scaledDAta, xAxisOffset, 0)
     }
 
 
-    this.destroy = function(){
+    this.destroy = function () {
         clearGraphic();
     }
 

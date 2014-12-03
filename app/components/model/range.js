@@ -6,8 +6,6 @@ function Range(min, max) {
         this.min = min;
         this.max = max;
     }
-    this.span = this.max - this.min;
-
     this.contains = function(value){
         return value >= this.min && value <= this.max;
     }

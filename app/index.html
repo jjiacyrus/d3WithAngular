@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body ng-controller="ExperimentController as experiment">
+
 <div id="datasetSelector">
     <label><input type="radio" name="dataset" ng-model="currentIndex" value="0" ng-checked="true">Dataset 1</label><br>
     <label><input type="radio" name="dataset" ng-model="currentIndex" value="1">Dataset 2</label><br>
@@ -28,24 +29,37 @@
 <plot-corral id="plot1"></plot-corral>
 <plot-corral id="plot2"></plot-corral>
 <plot-corral id="plot3"></plot-corral>
+<plot-corral id="plot4"></plot-corral>
+<plot-corral id="plot5"></plot-corral>
+<plot-corral id="plot6"></plot-corral>
+<plot-corral id="plot7"></plot-corral>
+<plot-corral id="plot8"></plot-corral>
+<plot-corral id="plot9"></plot-corral>
+<plot-corral id="plot10"></plot-corral>
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
+
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/jquery/jquery-2.1.1.min.js"></script>
 <script src="bower_components/d3/d3.js"></script>
 <script src="components/view/histogramPlot.js"></script>
+<script src="components/view/linePlot.js"></script>
 <script src="components/view/dotPlot.js"></script>
 <script src="components/d3Helpers/d3Helper.js"></script>
 <script src="components/d3Helpers/dotPlotHelper.js"></script>
 <script src="components/d3Helpers/histogramHelper.js"></script>
+<script src="components/d3Helpers/linePlotHelper.js"></script>
 <script src="components/model/range.js"></script>
-<script src="experiment/experiment.js"></script>
-<!--<script src="bower_components/angular-route/angular-route.js"></script>-->
+
 <script src="app.js"></script>
+<script src="experiment/experiment.js"></script>
 <script src="histogram/histogram.js"></script>
 <script src="dot_plot/dotPlot.js"></script>
 <script src="plot_corral/plotCorral.js"></script>
+<script src="line_plot/linePlot.js"></script>
+
+
 </body>
 </html>

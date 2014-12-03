@@ -1,0 +1,26 @@
+<button class='editSpecification' ng-hide="lineControls.showControls" ng-click="lineControls.setShowControls(true)">Change Specification</button>
+<button class='hideControls' ng-show="lineControls.showControls" ng-click="lineControls.setShowControls(false)">Hide Controls</button>
+
+<div class='controls' ng-show="lineControls.showControls">
+    <div class='xLabel'>X Parameter</div>
+    <select class='xParameter' ng-model="linePlotSpec.xParameter">
+        <option value="CH1">CH1</option>
+        <option value="CH2">CH2</option>
+        <option value="CH3">CH3</option>
+        <option value="CH4">CH4</option>
+    </select>
+
+    <div class='xRangeSelector'>
+        <div class='xRangeLabel'>X Range</div>
+        <input class='xRangeMin' type='number' min="0" ng-model="linePlotSpec.xRange.min">
+        <input class='xRangeMax' type='number' min="0" max="{{experiment.xRange.max}}" ng-model="linePlotSpec.xRange.max">
+    </div>
+    <div class="xShift">
+        <div>X Increment</div>
+        <input class="xOffset" type="number" ng-model="linePlotSpec.xIncrement">
+    </div>
+    <button ng-click="linePlot.reverse()"><<</button>
+    <button ng-click="linePlot.stop()">Stop</button>
+    <button ng-click="linePlot.start()">>></button>
+
+</div>

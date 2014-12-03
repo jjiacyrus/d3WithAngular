@@ -10,19 +10,19 @@
         <option value="CH4">CH4</option>
     </select>
 
-    <!--<select class='xScale' ng-model="histogramSpec.xScale">-->
-        <!--<option value="LIN">Linear</option>-->
-        <!--<option value="LOG">Log</option>-->
-    <!--</select>-->
+    <select class='xScale' ng-model="histogramSpec.xScale">
+        <option value="LIN">Linear</option>
+        <option value="LOG">Log</option>
+    </select>
 
     <div class='xRangeSelector'>
         <div class='xRangeLabel'>X Range</div>
-        <input class='xRangeMin' type='text' ng-model="histogramSpec.xRange.min">
-        <input class='xRangeMax' type='text' ng-model="histogramSpec.xRange.max">
+        <input class='xRangeMin' type='number' ng-model="histogramSpec.xRange.min">
+        <input class='xRangeMax' type='number' ng-model="histogramSpec.xRange.max">
     </div>
     <div>
         <div class='numberOfBinsLabel'>Number of Bins</div>
-        <input class='numberOfBins' type='text' ng-model="histogramSpec.numberOfBins">
+        <input class='numberOfBins' type='number' ng-model="histogramSpec.numberOfBins">
     </div>
 
 </div>
